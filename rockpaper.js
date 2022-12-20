@@ -7,13 +7,37 @@ function getComputerChoice() {
     //assign rock paper scissors 1-3
     let rps
     if (num === 1) {
-        rpsComp = "Rock"
+        rpsComp = "rock"
     } else if (num === 2){
-        rpsComp = "Paper"
+        rpsComp = "paper"
     } else {
-        rpsComp = "Scissors"
+        rpsComp = "scissors"
     }
     return rpsComp
 }   
-console.log(getComputerChoice())
+
+//get user input
+//--make user input case insensitive
+
+
+function playOneRound(rpsUser,computerSelection) {
+    //use a boolean
+    //=== draw
+    rpsUser = prompt('Enter "Rock", "Paper", or "Scissors"',"Rock" ).toLowerCase()
+    computerSelection = getComputerChoice()
+
+    console.log(rpsUser)
+    console.log(computerSelection)
+    
+    if (rpsUser === computerSelection) {
+        return "It's a draw!"
+    } else if (rpsUser === "rock" && computerSelection === "paper" || rpsUser === "paper" && computerSelection === "rock" || rpsUser === "scissors" && computerSelection === "paper") {
+        return `You won! ${rpsUser} beats ${computerSelection}!`
+    } else {
+        return `You lost! ${computerSelection} beats ${rpsUser}!`
+    }
+    
+    
+}
+console.log(playOneRound())
 
