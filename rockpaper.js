@@ -1,6 +1,24 @@
 
-//make a function that will randomly return rock paper or scissors
+let userScore = 0
+let compScore = 0
+let numberOfDraws = 0
+const userSelDiv = document.querySelector('.user-selection')
+const compSelDiv = document.querySelector('.comp-selection')
+const userScoreDiv = document.querySelector('.user-score')
+const compScoreDiv = document.querySelector('.comp-score')
+const draw = document.querySelector('.draw')
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
+
+rock.addEventListener('click', () => playOneRound("rock", getComputerChoice()))
+paper.addEventListener('click', () => playOneRound("paper", getComputerChoice()))
+scissors.addEventListener('click', () => playOneRound("scissors", getComputerChoice()))
+
+
+
+//make a function that will randomly return rock paper or scissors
 function getComputerChoice() {
     //get an integer 1-3 randomly
     let num = Math.floor(Math.random()*3+1);
@@ -17,38 +35,21 @@ function getComputerChoice() {
 }   
 
 function playOneRound(rpsUser,computerSelection) {
-    //get user input
-    //--make user input case insensitive
+    //compare user and computer selection to determine winner
     
-    
-    
-    let winner
-
-    
-    
-    //use booleans
     if (rpsUser === computerSelection) {
-        return "draw"
+        draw.textContent = "Draws: " + ++numberOfDraws
     } else if (rpsUser === "scissors" && computerSelection === "paper" || rpsUser === "paper" && computerSelection === "rock" || rpsUser === "rock" && computerSelection === "scissors") {
-        return "user"
+        userScoreDiv.textContent = "User: " + ++userScore
     } else {
-        console.log("comp")
+        compScoreDiv.textContent = "Computer: " + ++compScore
     }
-    //---modify to increment scores
     
 }
 
-
-  function userChoice() {
-    const rock = document.querySelector('.rock');
-    const paper = document.querySelector('.paper');
-    const scissors = document.querySelector('.scissors');
-    rock.addEventListener('click', () => playOneRound("rock", getComputerChoice()))
-    paper.addEventListener('click', () => playOneRound("paper", getComputerChoice()))
-    scissors.addEventListener('click', () => playOneRound("scissors", getComputerChoice()))
-}
-
-console.log(userChoice())
+userScoreDiv.textContent = "User: " + userScore
+compScoreDiv.textContent = "Computer: " + compScore
+draw.textContent = "Draws: " + numberOfDraws
 
 
 // function game() {

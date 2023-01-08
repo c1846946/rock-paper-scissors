@@ -10,3 +10,22 @@ button {
     font-size: large;
     font-family: Arial, Helvetica, sans-serif
 }
+
+.results {
+    
+}
+
+.players > div {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.players {
+    display: flex;
+    justify-content: center;
+}
+
+.draw {
+    display: flex;
+    justify-content: center;
+}
