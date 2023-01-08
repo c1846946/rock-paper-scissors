@@ -1,0 +1,12 @@
+.selections {
+    display: flex;
+    gap: 10px;
+    margin: 20px
+}
+
+button {
+    height: 100px;
+    flex: auto;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif
+}
