@@ -17,15 +17,30 @@ button {
 
 .players > div {
     margin: 10px;
-    font-size: 25px;
 }
 
 .players {
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 .draw {
     display: flex;
     justify-content: center;
+    font-size: 14px;
+}
+
+.comp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.score {
+    font-size: 25px;
+}
+
+.played {
+    min-height: 20px;
 }
